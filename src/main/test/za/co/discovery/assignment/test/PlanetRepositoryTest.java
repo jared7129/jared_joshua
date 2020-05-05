@@ -13,15 +13,7 @@ import za.co.discovery.assignment.context.listener.DataLoaderImpl;
 import za.co.discovery.assignment.orm.Planet;
 import za.co.discovery.assignment.repository.PlanetRepository;
 
-/**
- * 
- * @author Philani Dlamini
- * PlanetRepository test
- * @TODO write test method for testSave()
- * @TODO write test method for testDelete()
- * @TODO write test method for testFindOne()
- * 
- */
+
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment=SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class PlanetRepositoryTest {

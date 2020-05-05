@@ -11,7 +11,7 @@ import za.co.discovery.assignment.bus.DijkstraAlgorithm;
 
 /**
  * 
- * @author Philani Dlamini
+ * @author Jared Joshua
  * This Restful controller delegates to the ShortestPathService stragegy to compute the shortest path
  */
 @RestController
@@ -22,7 +22,7 @@ public class InterstellarRestController {
 	private DijkstraAlgorithm shortestPathService;
 	
 	/**
-	 * Finds the shortest path given the source and destinaiton
+	 * This will find the shortest route
 	 * @param source source node
 	 * @param destinaiton  destinaiton node
 	 * @Usage http://localhost:8080/shortestpath/A/Z

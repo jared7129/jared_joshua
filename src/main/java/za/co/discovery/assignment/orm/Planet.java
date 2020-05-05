@@ -2,6 +2,11 @@ package za.co.discovery.assignment.orm;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+/**
+ * 
+ * @author Jared Joshua
+ */
+
 @Entity
 public class Planet {
 	@Id
