@@ -14,16 +14,6 @@ import za.co.discovery.assignment.orm.Route;
 import za.co.discovery.assignment.repository.RouteRepository;
 
 
-/**
- * 
- * @author Philani Dlamini
- * RouteRepository test
- * @TODO write test method for testSave()
- * @TODO write test method for testDelete()
- * @TODO write test method for testFindOne()
- * 
- */
-
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment=SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class RouteRepositoryTest {

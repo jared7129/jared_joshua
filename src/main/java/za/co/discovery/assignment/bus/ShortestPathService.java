@@ -18,11 +18,8 @@ import za.co.discovery.assignment.repository.RouteRepository;
 
 /**
  * 
- * @author Philani Dlamini
- * ShortestPathService finds the shortest path between two nodes
- * Combination of @Lazy & @PostConstruct ensure the DijkstraAlgorithm weighted graph is only initilized once at service creation time when the service is invoked
- * Weighted graph is not eagerly loaded hogging precious resources
- * When the service gets destroyed lets use @PreDestroy to set the graph reference to null so it can get garbage collected
+ * @author Jared Joshua
+ * Will find the shortest path between the two nodes
  */
 @Service
 @Lazy

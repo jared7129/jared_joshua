@@ -17,18 +17,12 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.event.ContextStartedEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
-import za.co.discovery.assignment.exception.LoopsNotAllowedAcception;
+import za.co.discovery.assignment.exception.NoDuplicateValuesException;
 import za.co.discovery.assignment.orm.Planet;
 import za.co.discovery.assignment.orm.Route;
 import za.co.discovery.assignment.repository.PlanetRepository;
 import za.co.discovery.assignment.repository.RouteRepository;
 
-
-/**
- * 
- * @author Philani Dlamini
- * Reads the XLS data file on the classpath in order to load contents into the DB
- */
 @Component
 @SuppressWarnings("deprecation")
 public class DataLoaderImpl implements DataLoader {
@@ -56,7 +50,7 @@ public class DataLoaderImpl implements DataLoader {
 	}
 
 	/**
-	 * Entry method to process the XLS worksheets starting with the planets sheet and then proceeding to the routes sheet
+	 * Entry method to process the XLS worksheets.
 	 */
 	@Override
 	public void readXlsDataFile() {
@@ -138,7 +132,7 @@ public class DataLoaderImpl implements DataLoader {
 			if (source != destination) {
 				persistRoute(routeID, source, destination, distance);
 			}
-		} catch (LoopsNotAllowedAcception e) {
+		} catch (NoDuplicateValuesException e) {
 			LOG.info(e.getLocalizedMessage() + "for route id=" + routeID + "got  " + source + " and " + destination);
 		}
 	}
@@ -185,10 +179,10 @@ public class DataLoaderImpl implements DataLoader {
 	 * @param origin sourece planet
 	 * @param planetDest destinaiton planet
 	 * @param distance distance
-	 * @throws LoopsNotAllowedAcception
+	 * @throws NoDuplicateValuesException
 	 */
 	private void persistRoute(Short routeId, String origin, String planetDest, float distance)
-			throws LoopsNotAllowedAcception {
+			throws NoDuplicateValuesException {
 		Planet source = planetRepo.findOne(origin);
 		Planet dest = planetRepo.findOne(planetDest);
 		if ((source != null) && (dest != null)) {

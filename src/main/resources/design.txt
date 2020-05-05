@@ -1,13 +1,15 @@
+
+Specifications
+-----------------
+
 Startup services
 -----------------
 DataLoaderImpl.JAVA
--Waits for the Spring Boot context to start than reads the XLS data file
--Persists the data file records into the in memory derby DB
+-Waits for the Spring Boot context to start than reads the XLS data file.
+-Persists the data file records into the in memory derby DB.
 
 ORM
 -------
--Tried not to have an unnecessarily deep object graph, could have had a Graph object that contains 
-a set of Planets and a set of Routes but instead went with the below more perfromance friendly approach.
 -Mapped a Unidirectional Route --->Planet
 -Planet.java
 -Route.java
@@ -15,15 +17,15 @@ a set of Planets and a set of Routes but instead went with the below more perfro
 Business Logic
 -----------------
 ShortestPathService.java
--Contains the DijkstraAlgorithm business logic
--Uses the strategy pattern to delegate finding the shortes path to SimpleDirectedWeightedGraph
--Lazily initializes the SimpleDirectedWeightedGraph at service invocation time
+-Contains the DijkstraAlgorithm.
+-Uses the strategy pattern to delegate finding the shortes path to SimpleDirectedWeightedGraph.
+-Lazily initializes the SimpleDirectedWeightedGraph at service invocation time.
 
 
 Rest Layer
 -------------
 InterstellarRestController.java
--Reuses ShortestPathService.java to return the shortes path 
+-Reuses ShortestPathService.java to return the shortest path 
 -Sample usage-->http://localhost:8080/shortestpath/A/Z
 
 HATEOAS endpoints that expose the DB objetcs
@@ -38,7 +40,7 @@ SOAP layer
 
 Front end
 ---------
--Will use Thymeleaf
+- Uses Thymeleaf
 
 
 Unit testing
