@@ -9,3 +9,4 @@ import za.co.discovery.assignment.orm.Planet;
 public interface PlanetRepository extends JpaRepository<Planet, String> {
 
 }
+
