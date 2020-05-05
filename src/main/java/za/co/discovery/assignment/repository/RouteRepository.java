@@ -10,3 +10,4 @@ public interface RouteRepository extends JpaRepository<Route, Short>
 {
 
 }
+
